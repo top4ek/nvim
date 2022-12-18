@@ -28,6 +28,7 @@ Set_keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>")
 Set_keymap("n", "<Leader>fb", "<cmd>Telescope buffers<CR>")
 Set_keymap("n", "<Leader>fs", "<cmd>Telescope git_status<CR>")
 Set_keymap("n", "<Leader>fd", "<cmd>Telescope diagnostics<CR>")
+Set_keymap("n", "<Leader>fu", "<cmd>Telescope undo<CR>")
 
 Set_keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 Set_keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")

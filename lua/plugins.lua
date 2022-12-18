@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
 
   use 'ahmedkhalf/project.nvim'
   use 'arkav/lualine-lsp-progress'
-  use 'danilamihailov/beacon.nvim'
   use 'editorconfig/editorconfig-vim'
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
@@ -27,23 +26,19 @@ return require('packer').startup(function(use)
   use 'petertriho/nvim-scrollbar'
   use 'wakatime/vim-wakatime'
   use 'windwp/nvim-autopairs'
+  use 'karb94/neoscroll.nvim'
 
   use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
   use {
     { 'nvim-telescope/telescope.nvim',
       requires = {
-        'nvim-lua/popup.nvim',
+        'debugloop/telescope-undo.nvim',
         'nvim-lua/plenary.nvim',
-        'telescope-frecency.nvim',
-        'telescope-fzf-native.nvim',
+        'nvim-lua/popup.nvim',
         'nvim-telescope/telescope-ui-select.nvim',
-      },
-      wants = {
-        'popup.nvim',
         'plenary.nvim',
-        'telescope-frecency.nvim',
-        'telescope-fzf-native.nvim',
+        'popup.nvim'
       },
       cmd = 'Telescope',
       module = 'telescope',
