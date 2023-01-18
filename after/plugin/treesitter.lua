@@ -22,6 +22,7 @@ configs.setup {
     "python",
     "regex",
     "ruby",
+    "rust",
     "sql",
     "toml",
     "yaml"

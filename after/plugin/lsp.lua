@@ -10,6 +10,8 @@ lsp.ensure_installed({
   'html',
   'jsonls',
   'marksman',
+  'openscad_lsp',
+  'rust_analyzer',
   'solargraph',
   'sumneko_lua',
   'yamlls'
