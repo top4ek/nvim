@@ -3,9 +3,12 @@ if not ok then return end
 
 telescope.setup {
   defaults = {
-    layout_strategy = 'flex',
-    scroll_strategy = 'cycle',
-  },
+    layout_strategy = 'vertical',
+    scroll_strategy = 'limit',
+    layout_config = {
+      vertical = { height = 0.95, width = 0.95 }
+    }
+   },
   extensions = {
     fzf = {
       fuzzy = true,
