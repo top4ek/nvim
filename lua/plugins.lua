@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   use 'karb94/neoscroll.nvim'
 
   use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
+  use { 'wthollingsworth/pomodoro.nvim', requires = 'MunifTanjim/nui.nvim' }
 
   use {
     { 'nvim-telescope/telescope.nvim',

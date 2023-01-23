@@ -25,7 +25,7 @@ lualine.setup {
     lualine_b = {'branch', 'diff', [[gs.blame_line{full=true}]], 'diagnostics'},
     lualine_c = {[[vim.api.nvim_win_get_number(0)]], 'filename'},
     lualine_x = {'lsp_progress', 'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
+    lualine_y = {require('pomodoro').statusline, 'progress'},
     lualine_z = {'location'}
   },
   inactive_sections = {
