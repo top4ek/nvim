@@ -52,7 +52,7 @@ if gruvbox_ok then
     dim_inactive = false,
     transparent_mode = false,
   })
-  vim.o.background = "dark"
+  vim.o.background = "light"
   vim.cmd("colorscheme gruvbox")
   return
 end

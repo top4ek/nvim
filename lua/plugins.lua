@@ -8,8 +8,8 @@ end
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-  use 'navarasu/onedark.nvim'
-  -- use { 'ellisonleao/gruvbox.nvim',
+  -- use 'navarasu/onedark.nvim'
+  use 'ellisonleao/gruvbox.nvim'
 
   use 'stevearc/aerial.nvim'
   use 'ahmedkhalf/project.nvim'
