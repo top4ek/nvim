@@ -22,9 +22,10 @@ lualine.setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', [[gs.blame_line{full=true}]], 'diagnostics'},
+
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {[[vim.api.nvim_win_get_number(0)]], 'filename', 'aerial'},
-    lualine_x = {'lsp_progress', 'encoding', 'fileformat', 'filetype'},
+    lualine_x = {'b:gitsigns_blame_line', 'lsp_progress', 'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

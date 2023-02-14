@@ -13,7 +13,7 @@ lsp.ensure_installed({
   'openscad_lsp',
   'rust_analyzer',
   'solargraph',
-  'sumneko_lua',
+  'lua_ls',
   'yamlls'
 })
 

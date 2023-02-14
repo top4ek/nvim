@@ -12,16 +12,16 @@ if onedark_ok then
       toggle_style_key = '<leader>ts', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
       toggle_style_list = {'deep', 'light'}, -- List of styles to toggle between
 
-      code_style = {
-          comments = 'italic',
-          keywords = 'none',
-          functions = 'none',
-          strings = 'none',
-          variables = 'none'
-      },
+      -- code_style = {
+      --     comments = 'italic',
+      --     keywords = 'none',
+      --     functions = 'none',
+      --     strings = 'none',
+      --     variables = 'none'
+      -- },
 
-      colors = {}, -- Override default colors
-      highlights = {}, -- Override highlight groups
+      -- colors = {}, -- Override default colors
+      -- highlights = {}, -- Override highlight groups
 
       diagnostics = {
           darker = true, -- darker colors for diagnostic
@@ -52,7 +52,8 @@ if gruvbox_ok then
     dim_inactive = false,
     transparent_mode = false,
   })
-  vim.o.background = "light"
+  vim.o.background = "dark"
+  -- vim.o.background = "light"
   vim.cmd("colorscheme gruvbox")
   return
 end
