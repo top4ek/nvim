@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
   use 'ahmedkhalf/project.nvim'
   use 'arkav/lualine-lsp-progress'
   use 'editorconfig/editorconfig-vim'
-  use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'lewis6991/gitsigns.nvim'
   use 'nathom/filetype.nvim'
@@ -28,6 +27,7 @@ return require('packer').startup(function(use)
   use 'wakatime/vim-wakatime'
   use 'windwp/nvim-autopairs'
   use 'karb94/neoscroll.nvim'
+  use 'kyazdani42/nvim-tree.lua'
 
   use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
