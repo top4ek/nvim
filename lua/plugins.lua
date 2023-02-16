@@ -18,18 +18,27 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'lewis6991/gitsigns.nvim'
   use 'nathom/filetype.nvim'
-  use 'numToStr/Comment.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
   use 'RRethy/nvim-treesitter-endwise'
-  use 'ojroques/nvim-bufdel'
-  use 'petertriho/nvim-scrollbar'
   use 'wakatime/vim-wakatime'
-  use 'windwp/nvim-autopairs'
-  use 'karb94/neoscroll.nvim'
-  use 'kyazdani42/nvim-tree.lua'
+
+  use 'echasnovski/mini.animate'
+  use 'echasnovski/mini.bufremove'
+  use 'echasnovski/mini.comment'
+  use 'echasnovski/mini.cursorword'
+  use 'echasnovski/mini.indentscope'
+  use 'echasnovski/mini.pairs'
 
   use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
+
+  use { "nvim-neo-tree/neo-tree.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
 
   use {
     { 'nvim-telescope/telescope.nvim',
