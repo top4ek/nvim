@@ -12,7 +12,7 @@ Set_keymap("n", "<Leader>q", "",  {
   callback = function()
     local buflisted = vim.fn.getbufinfo({buflisted = 1})
     local cur_winnr, cur_bufnr = vim.fn.winnr(), vim.fn.bufnr()
-    if #buflisted < 2 then cmd 'confirm qall' return end
+    -- if #buflisted < 2 then vim.cmd 'confirm qall' return end
     for _, winid in ipairs(vim.fn.getbufinfo(cur_bufnr)[1].windows) do
       vim.cmd(string.format('%d wincmd w', vim.fn.win_id2win(winid)))
       vim.cmd(cur_bufnr == buflisted[#buflisted].bufnr and 'bp' or 'bn')
@@ -22,6 +22,7 @@ Set_keymap("n", "<Leader>q", "",  {
     vim.cmd(is_terminal and 'bd! #' or 'silent! confirm bd #')
   end
 })
+Set_keymap("n", "<Leader>Q", "<cmd>%bd<CR>")
 
 Set_keymap("", "<Left>", ':echoe "Use h"<CR>')
 Set_keymap("", "<Right>", ':echoe "Use l"<CR>')
@@ -49,4 +50,3 @@ Set_keymap("n", "<Leader>fa", "<cmd>Telescope aerial<CR>")
 
 Set_keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 Set_keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
-Set_keymap("n", "<Leader>Q", "<cmd>bufdo bd<CR>")
