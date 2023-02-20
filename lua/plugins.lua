@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
   use 'RRethy/nvim-treesitter-endwise'
   use 'wakatime/vim-wakatime'
+  use 'nvim-tree/nvim-tree.lua'
 
   use 'echasnovski/mini.animate'
   use 'echasnovski/mini.bufremove'
@@ -31,14 +32,6 @@ return require('packer').startup(function(use)
   use 'echasnovski/mini.pairs'
 
   use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
-
-  use { "nvim-neo-tree/neo-tree.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    }
-  }
 
   use {
     { 'nvim-telescope/telescope.nvim',
