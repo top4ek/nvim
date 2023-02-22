@@ -1,41 +1,59 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  Packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd.packadd('packer.nvim')
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+local opts = {}
+local plugins = {
+  'wbthomason/packer.nvim',
 
-  use 'navarasu/onedark.nvim'
-  -- use 'ellisonleao/gruvbox.nvim'
+  'navarasu/onedark.nvim',
+  -- 'ellisonleao/gruvbox.nvim',
 
-  use 'stevearc/aerial.nvim'
-  use 'ahmedkhalf/project.nvim'
-  use 'arkav/lualine-lsp-progress'
-  use 'editorconfig/editorconfig-vim'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'lewis6991/gitsigns.nvim'
-  use 'nathom/filetype.nvim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-treesitter/nvim-treesitter'
-  use 'RRethy/nvim-treesitter-endwise'
-  use 'wakatime/vim-wakatime'
-  use 'nvim-tree/nvim-tree.lua'
+  'stevearc/aerial.nvim',
+  'ahmedkhalf/project.nvim',
+  'arkav/lualine-lsp-progress',
+  'editorconfig/editorconfig-vim',
+  'kyazdani42/nvim-web-devicons',
+  'lewis6991/gitsigns.nvim',
+  'nathom/filetype.nvim',
+  'nvim-lualine/lualine.nvim',
+  'nvim-treesitter/nvim-treesitter',
+  'RRethy/nvim-treesitter-endwise',
+  'wakatime/vim-wakatime',
+  'nvim-tree/nvim-tree.lua',
 
-  use 'echasnovski/mini.animate'
-  use 'echasnovski/mini.bufremove'
-  use 'echasnovski/mini.comment'
-  use 'echasnovski/mini.cursorword'
-  use 'echasnovski/mini.indentscope'
-  use 'echasnovski/mini.pairs'
+  'echasnovski/mini.animate',
+  'echasnovski/mini.bufremove',
+  'echasnovski/mini.comment',
+  'echasnovski/mini.cursorword',
+  'echasnovski/mini.indentscope',
+  'echasnovski/mini.pairs',
 
-  use { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
+  'L3MON4D3/LuaSnip',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-nvim-lua',
+  'hrsh7th/cmp-path',
+  'hrsh7th/nvim-cmp',
+  'rafamadriz/friendly-snippets',
 
-  use {
+  'VonHeikemen/lsp-zero.nvim',
+
+  { 'tpope/vim-dispatch', cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } },
+  { 'akinsho/bufferline.nvim', dependencies = 'kyazdani42/nvim-web-devicons' },
+
+  {
     { 'nvim-telescope/telescope.nvim',
-      requires = {
+      dependencies = {
         'debugloop/telescope-undo.nvim',
         'nvim-lua/plenary.nvim',
         'nvim-lua/popup.nvim',
@@ -44,38 +62,15 @@ return require('packer').startup(function(use)
         'popup.nvim'
       },
       cmd = 'Telescope',
-      module = 'telescope',
     },
-    { 'nvim-telescope/telescope-frecency.nvim',
-      after = 'telescope.nvim',
-      requires = 'tami5/sqlite.lua',
-    },
-    { 'nvim-telescope/telescope-fzf-native.nvim',
-      run = 'make',
-    }
-  }
-
-  use { 'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
-
-  use 'L3MON4D3/LuaSnip'
-  use 'rafamadriz/friendly-snippets'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-
+    { 'nvim-telescope/telescope-frecency.nvim', dependencies = 'tami5/sqlite.lua' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+  },
+}
   if not os.getenv("LIGHT_NVIM") then
-    use 'neovim/nvim-lspconfig'
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+    table.insert(plugins, 'neovim/nvim-lspconfig')
+    table.insert(plugins, 'williamboman/mason.nvim')
+    table.insert(plugins, 'williamboman/mason-lspconfig.nvim')
   end
 
-  use 'VonHeikemen/lsp-zero.nvim'
-
-  if Packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+require("lazy").setup(plugins, opts)

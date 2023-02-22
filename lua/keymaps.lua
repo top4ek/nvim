@@ -1,13 +1,3 @@
-vim.g.mapleader = " "
-
-function Set_keymap(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-      options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 Set_keymap("n", "<Leader>q", "",  {
   callback = function()
     local buflisted = vim.fn.getbufinfo({buflisted = 1})
