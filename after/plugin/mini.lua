@@ -1,15 +1,23 @@
 local modules = {
-  'mini.animate',
-  'mini.bufremove',
-  'mini.comment',
-  'mini.cursorword',
-  'mini.indentscope',
-  'mini.pairs'
+  animate = {},
+  bufremove = {},
+  comment = {},
+  cursorword = {
+    delay = 500,
+  },
+  indentscope = {},
+  pairs = {
+    mappings = {
+      ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\][^%)]' },
+      ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\][^%]]' },
+      ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\][^%}]' },
+    }
+  }
 }
 
-for i, m in ipairs(modules) do
-  local ok, module = pcall(require, m)
+for m, o in pairs(modules) do
+  local ok, module = pcall(require, "mini." .. m)
   if ok then
-    module.setup()
+    module.setup(o)
   end
 end
