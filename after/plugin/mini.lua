@@ -1,18 +1,16 @@
 local modules = {
   animate = {},
   bufremove = {},
+  options = {
+    ignore_blank_line = true,
+    start_of_line = true
+  },
   comment = {},
   cursorword = {
     delay = 500,
   },
   indentscope = {},
-  pairs = {
-    mappings = {
-      ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\][^%)]' },
-      ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\][^%]]' },
-      ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\][^%}]' },
-    }
-  }
+  pairs =  {}
 }
 
 for m, o in pairs(modules) do
