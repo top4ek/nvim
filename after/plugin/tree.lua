@@ -33,4 +33,4 @@ tree.setup {
   }
 }
 
-Set_keymap('n', '<Leader>e', '<CMD>lua require("nvim-tree").toggle(false, true)<CR>')
+Set_keymap('n', '<Leader>e', '<CMD>lua require("nvim-tree.api").tree.toggle { find_file = true, focus = false }<CR>')
