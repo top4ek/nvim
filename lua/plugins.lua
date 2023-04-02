@@ -27,6 +27,7 @@ local plugins = {
   'nathom/filetype.nvim',
   'nvim-lualine/lualine.nvim',
   'nvim-treesitter/nvim-treesitter',
+  'nvim-treesitter/nvim-treesitter-context',
   'RRethy/nvim-treesitter-endwise',
   'wakatime/vim-wakatime',
   'nvim-tree/nvim-tree.lua',
