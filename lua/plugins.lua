@@ -21,7 +21,6 @@ local plugins = {
   'stevearc/aerial.nvim',
   'ahmedkhalf/project.nvim',
   'arkav/lualine-lsp-progress',
-  'editorconfig/editorconfig-vim',
   'kyazdani42/nvim-web-devicons',
   'lewis6991/gitsigns.nvim',
   'nathom/filetype.nvim',

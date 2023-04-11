@@ -30,6 +30,8 @@ local options = {
     wildmenu = true,
 }
 
+vim.g.editorconfig = true
+
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
