@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 local plugins = {
-  'wbthomason/packer.nvim',
-
   'navarasu/onedark.nvim',
   -- 'ellisonleao/gruvbox.nvim',
 
