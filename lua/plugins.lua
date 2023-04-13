@@ -15,7 +15,6 @@ local opts = {}
 local plugins = {
   'navarasu/onedark.nvim',
   -- 'ellisonleao/gruvbox.nvim',
-
   'stevearc/aerial.nvim',
   'ahmedkhalf/project.nvim',
   'arkav/lualine-lsp-progress',

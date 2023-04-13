@@ -41,11 +41,6 @@ configs.setup {
 	}
 }
 
-local opt = vim.opt
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-
 local ok, context = pcall(require, "treesitter-context")
 if ok then
   context.setup { enable = true }
