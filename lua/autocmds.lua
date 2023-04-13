@@ -24,6 +24,6 @@ command('TextYankPost', {
 command('BufWritePre', {
   pattern = '*.go',
   callback = function()
-    vim.lsp.buf.formatting_sync(nil, 3000)
+    vim.lsp.buf.format({ bufnr = bufnr })
   end
 })
