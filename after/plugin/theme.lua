@@ -3,14 +3,14 @@ local gruvbox_ok, gruvbox = pcall(require, "gruvbox")
 
 if onedark_ok then
   onedark.setup {
-      style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-      transparent = false,  -- Show/hide background
+      style = 'light', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+      transparent = false,  -- Show/hide backgriound
       term_colors = true, -- Change terminal color as per the selected theme style
       ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
       cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
       toggle_style_key = '<leader>ts', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-      toggle_style_list = {'deep', 'light'}, -- List of styles to toggle between
+      toggle_style_list = {'light', 'cool'}, -- List of styles to toggle between
 
       -- code_style = {
       --     comments = 'italic',
@@ -29,7 +29,7 @@ if onedark_ok then
           background = true,    -- use background color for virtual text
       },
   }
-
+  vim.o.background = 'light'
   onedark.load()
   return
 end

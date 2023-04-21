@@ -9,11 +9,12 @@ lsp.ensure_installed({
   'gopls',
   'html',
   'jsonls',
+  'lua_ls',
   'marksman',
   'openscad_lsp',
+  -- 'ruby_ls',
   'rust_analyzer',
   'solargraph',
-  'lua_ls',
   'yamlls'
 })
 
