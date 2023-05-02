@@ -35,6 +35,7 @@ local plugins = {
   'echasnovski/mini.cursorword',
   'echasnovski/mini.indentscope',
   'echasnovski/mini.pairs',
+  'jinh0/eyeliner.nvim',
 
   'L3MON4D3/LuaSnip',
   'hrsh7th/cmp-buffer',
