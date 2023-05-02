@@ -20,7 +20,9 @@ if onedark_ok then
       --     variables = 'none'
       -- },
 
-      -- colors = {}, -- Override default colors
+      colors = { -- Override default colors
+        blue = '#181fba'
+      },
       -- highlights = {}, -- Override highlight groups
 
       diagnostics = {
