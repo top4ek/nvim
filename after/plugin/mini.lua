@@ -2,10 +2,7 @@ local modules = {
   animate = {},
   bufremove = {},
   comment = {
-    options = {
-      ignore_blank_line = true,
-      start_of_line = true
-    }
+    options = { ignore_blank_line = true }
   },
   cursorword = {
     delay = 500,
