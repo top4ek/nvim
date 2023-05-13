@@ -1,6 +1,12 @@
 local onedark_ok, onedark = pcall(require, "onedark")
 -- local gruvbox_ok, gruvbox = pcall(require, "gruvbox")
 
+if os.getenv("LIGHT_TERMINAL") == 'True' then
+  vim.o.background = 'light'
+else
+  vim.o.background = 'dark'
+end
+
 if onedark_ok then
   onedark.setup {
       style = 'light', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -56,5 +62,3 @@ if gruvbox_ok then
   vim.cmd("colorscheme gruvbox")
   return
 end
-
-vim.o.background = os.getenv("LIGHT_TERMINAL") and 'light' or 'dark'
