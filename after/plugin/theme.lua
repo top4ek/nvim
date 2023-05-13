@@ -10,7 +10,7 @@ if onedark_ok then
       cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
       toggle_style_key = '<leader>ts', -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-      toggle_style_list = {'light', 'cool'}, -- List of styles to toggle between
+      toggle_style_list = {'light', 'dark'}, -- List of styles to toggle between
 
       -- code_style = {
       --     comments = 'italic',
@@ -31,7 +31,6 @@ if onedark_ok then
           background = true,    -- use background color for virtual text
       },
   }
-  vim.o.background = 'light'
   onedark.load()
   return
 end
@@ -54,8 +53,8 @@ if gruvbox_ok then
     dim_inactive = false,
     transparent_mode = false,
   })
-  -- vim.o.background = "dark"
-  vim.o.background = "light"
   vim.cmd("colorscheme gruvbox")
   return
 end
+
+vim.o.background = os.getenv("LIGHT_TERMINAL") and 'light' or 'dark'
