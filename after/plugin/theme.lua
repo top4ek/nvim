@@ -1,5 +1,5 @@
 local onedark_ok, onedark = pcall(require, "onedark")
-local gruvbox_ok, gruvbox = pcall(require, "gruvbox")
+-- local gruvbox_ok, gruvbox = pcall(require, "gruvbox")
 
 if onedark_ok then
   onedark.setup {
@@ -54,8 +54,8 @@ if gruvbox_ok then
     dim_inactive = false,
     transparent_mode = false,
   })
-  vim.o.background = "dark"
-  -- vim.o.background = "light"
+  -- vim.o.background = "dark"
+  vim.o.background = "light"
   vim.cmd("colorscheme gruvbox")
   return
 end
