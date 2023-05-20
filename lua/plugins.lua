@@ -28,6 +28,7 @@ local plugins = {
   'RRethy/nvim-treesitter-endwise',
   'wakatime/vim-wakatime',
   'nvim-tree/nvim-tree.lua',
+  'ggandor/leap.nvim',
 
   'echasnovski/mini.animate',
   'echasnovski/mini.bufremove',
