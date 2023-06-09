@@ -12,7 +12,7 @@ lsp.ensure_installed({
   'lua_ls',
   'marksman',
   'openscad_lsp',
-  -- 'ruby_ls',
+  'pylsp',
   'rust_analyzer',
   'solargraph',
   'yamlls'
