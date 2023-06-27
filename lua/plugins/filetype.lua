@@ -1,1 +1,3 @@
-return { "nathom/filetype.nvim" }
+return { "nathom/filetype.nvim",
+  config = true
+}
