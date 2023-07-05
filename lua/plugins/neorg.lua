@@ -40,12 +40,15 @@ return { "nvim-neorg/neorg",
       },
       ["core.journal"] = {
         config = {
-          strategy = "flat",
+          strategy = "nested",
           workspace = "Default",
         },
       },
+      ["core.summary"] = {},
       ["core.dirman"] = {
         config = {
+          index = "index.norg",
+          open_last_workspace = true,
           workspaces = {
             Default = "~/Syncthing/configs/neorg"
           }
