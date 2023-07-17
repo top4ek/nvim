@@ -2,6 +2,10 @@ return { "nvim-neorg/neorg",
   ft = "norg",
   cmd = "Neorg",
   build = ":Neorg sync-parsers",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+    "nvim-treesitter/nvim-treesitter" },
   config = function ()
     local plugins = {
       ["core.defaults"] = {},
@@ -12,12 +16,8 @@ return { "nvim-neorg/neorg",
         }
       },
       ["core.integrations.nvim-cmp"] = {},
-      ["core.concealer"] = {
-        config = {
-          icon_preset = "diamond"
-        }
-      },
-      ["core.export"] = {},
+      ["core.concealer"] = {},
+      -- ["core.export"] = {},
       ["core.keybinds"] = {
         config = {
           default_keybinds = true,
@@ -30,21 +30,18 @@ return { "nvim-neorg/neorg",
           update_date = true
         }
       },
-      ["core.qol.toc"] = {},
-      ["core.qol.todo_items"] = {},
-      ["core.looking-glass"] = {},
-      ["core.presenter"] = {
-        config = {
-          zen_mode = "zen-mode"
-        }
-      },
+      -- ["core.presenter"] = {
+      --   config = {
+      --     zen_mode = "zen-mode"
+      --   }
+      -- },
       ["core.journal"] = {
         config = {
           strategy = "nested",
           workspace = "Default",
         },
       },
-      ["core.summary"] = {},
+      -- ["core.summary"] = {},
       ["core.dirman"] = {
         config = {
           index = "index.norg",
@@ -55,6 +52,7 @@ return { "nvim-neorg/neorg",
         }
       },
     }
+    -- vim.opt.conceallevel = 2
     require("neorg").setup { load = plugins }
   end
 }

@@ -25,6 +25,7 @@ return {
       'pylsp',
       'rust_analyzer',
       'solargraph',
+      'tsserver',
       'yamlls'
     })
 

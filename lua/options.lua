@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 function Set_keymap(mode, lhs, rhs, opts)
   local options = { noremap = true }

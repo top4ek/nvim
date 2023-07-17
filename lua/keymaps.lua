@@ -39,6 +39,10 @@ Set_keymap("n", "<Leader>fs", "<cmd>Telescope git_status<CR>")
 Set_keymap("n", "<Leader>fu", "<cmd>Telescope undo<CR>")
 Set_keymap("n", "<Leader>fc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
+Set_keymap("n", "<Leader>oj", "<cmd>Neorg journal today<CR>")
+Set_keymap("n", "<Leader>oi", "<cmd>Neorg index<CR>")
+Set_keymap("n", "<Leader>oo", "<cmd>Neorg<CR>")
+
 Set_keymap('n', '<Leader>e', '<CMD>lua require("nvim-tree.api").tree.toggle { find_file = true, focus = false }<CR>')
 
 Set_keymap("v", "<leader>s", "<cmd>sort i<cr>")
