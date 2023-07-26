@@ -35,7 +35,7 @@ Set_keymap("n", "<Leader>ff", "<cmd>Telescope find_files hidden=true<CR>")
 Set_keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>")
 Set_keymap("n", "<Leader>fp", "<cmd>Telescope projects<CR>")
 Set_keymap("n", "<Leader>fr", "<cmd>Telescope registers<CR>")
-Set_keymap("n", "<Leader>fs", "<cmd>Telescope git_status<CR>")
+Set_keymap("n", "<Leader>fs", "<cmd>Neogit<CR>")
 Set_keymap("n", "<Leader>fu", "<cmd>Telescope undo<CR>")
 Set_keymap("n", "<Leader>fc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
