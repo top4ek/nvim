@@ -52,7 +52,7 @@ return { "nvim-neorg/neorg",
         }
       },
     }
-    -- vim.opt.conceallevel = 2
+    vim.opt.conceallevel = 2
     require("neorg").setup { load = plugins }
   end
 }

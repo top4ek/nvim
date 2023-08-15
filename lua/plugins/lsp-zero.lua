@@ -21,7 +21,6 @@ return {
       'jsonls',
       'lua_ls',
       'marksman',
-      'openscad_lsp',
       'pylsp',
       'rust_analyzer',
       'solargraph',
