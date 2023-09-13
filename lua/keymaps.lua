@@ -14,11 +14,6 @@ Set_keymap("n", "<Leader>q", "",  {
 })
 Set_keymap("n", "<Leader>Q", "<cmd>%bd<CR>")
 
-Set_keymap("", "<Left>", ':echoe "Use h"<CR>')
-Set_keymap("", "<Right>", ':echoe "Use l"<CR>')
-Set_keymap("", "<Up>", ':echoe "Use k"<CR>')
-Set_keymap("", "<Down>", ':echoe "Use j"<CR>')
-
 Set_keymap("v", "J", ":m '>+1<CR>gv=gv")
 Set_keymap("v", "K", ":m '<-2<CR>gv=gv")
 
