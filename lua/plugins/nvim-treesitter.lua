@@ -1,4 +1,5 @@
-return { "nvim-treesitter/nvim-treesitter",
+return {
+  "nvim-treesitter/nvim-treesitter",
   dependencies = {
     "RRethy/nvim-treesitter-endwise",
     "nvim-treesitter/nvim-treesitter-context"
@@ -6,7 +7,7 @@ return { "nvim-treesitter/nvim-treesitter",
   build = function()
     require("nvim-treesitter.install").update { with_sync = true }
   end,
-  configs = function ()
+  configs = function()
     require("nvim-treesitter.configs").setup {
       ensure_installed = {
         "bash",

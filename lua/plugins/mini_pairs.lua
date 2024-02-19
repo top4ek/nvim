@@ -1,3 +1,4 @@
-return { "echasnovski/mini.pairs",
+return {
+  "echasnovski/mini.pairs",
   config = true
 }

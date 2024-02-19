@@ -1,3 +1,4 @@
-return { "echasnovski/mini.bufremove",
+return {
+  "echasnovski/mini.bufremove",
   config = true
 }

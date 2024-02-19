@@ -1,3 +1,4 @@
-return { 'echasnovski/mini.animate',
+return {
+  'echasnovski/mini.animate',
   config = true
 }

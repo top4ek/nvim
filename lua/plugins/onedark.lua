@@ -1,4 +1,5 @@
-return { 'navarasu/onedark.nvim',
+return {
+  'navarasu/onedark.nvim',
   config = function()
     local onedark = require("onedark")
     onedark.setup {
@@ -24,9 +25,9 @@ return { 'navarasu/onedark.nvim',
       },
 
       diagnostics = {
-          darker = true,
-          undercurl = true,
-          background = true,
+        darker = true,
+        undercurl = true,
+        background = true,
       },
     }
     onedark.load()

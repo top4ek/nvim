@@ -1,3 +1,4 @@
-return { "echasnovski/mini.indentscope",
+return {
+  "echasnovski/mini.indentscope",
   config = true
 }

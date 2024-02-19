@@ -1,4 +1,5 @@
-return { "williamboman/mason.nvim",
-  dependencies = { "neovim/nvim-lspconfig" },
-  cond = not os.getenv("LIGHT_NVIM")
+return {
+  "williamboman/mason.nvim",
+  cond = not os.getenv("LIGHT_NVIM"),
+  config = true
 }

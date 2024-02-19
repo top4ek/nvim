@@ -1,3 +1,4 @@
-return { "echasnovski/mini.cursorword",
+return {
+  "echasnovski/mini.cursorword",
   opts = { delay = 500 }
 }

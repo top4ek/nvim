@@ -1,6 +1,6 @@
-Set_keymap("n", "<Leader>q", "",  {
+Set_keymap("n", "<Leader>q", "", {
   callback = function()
-    local buflisted = vim.fn.getbufinfo({buflisted = 1})
+    local buflisted = vim.fn.getbufinfo({ buflisted = 1 })
     local cur_winnr, cur_bufnr = vim.fn.winnr(), vim.fn.bufnr()
     -- if #buflisted < 2 then vim.cmd 'confirm qall' return end
     for _, winid in ipairs(vim.fn.getbufinfo(cur_bufnr)[1].windows) do
@@ -23,20 +23,8 @@ Set_keymap("i", "jj", "<ESC>")
 Set_keymap("", "<Leader>bb", "obinding.break<ESC>")
 Set_keymap("", "<Leader>bB", "Obinding.break<ESC>")
 
-Set_keymap("n", "<Leader>fa", "<cmd>Telescope aerial<CR>")
-Set_keymap("n", "<Leader>fb", "<cmd>Telescope buffers<CR>")
-Set_keymap("n", "<Leader>fd", "<cmd>Telescope diagnostics<CR>")
-Set_keymap("n", "<Leader>ff", "<cmd>Telescope find_files hidden=true<CR>")
-Set_keymap("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>")
-Set_keymap("n", "<Leader>fp", "<cmd>Telescope projects<CR>")
-Set_keymap("n", "<Leader>fr", "<cmd>Telescope registers<CR>")
 Set_keymap("n", "<Leader>fs", "<cmd>Neogit<CR>")
-Set_keymap("n", "<Leader>fu", "<cmd>Telescope undo<CR>")
 Set_keymap("n", "<Leader>fc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-
-Set_keymap("n", "<Leader>oj", "<cmd>Neorg journal today<CR>")
-Set_keymap("n", "<Leader>oi", "<cmd>Neorg index<CR>")
-Set_keymap("n", "<Leader>oo", "<cmd>Neorg<CR>")
 
 Set_keymap('n', '<Leader>e', '<CMD>lua require("nvim-tree.api").tree.toggle { find_file = true, focus = false }<CR>')
 
