@@ -6,7 +6,7 @@ local M = {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp"
   },
-  con = not os.getenv("LIGHT_NVIM")
+  cond = not os.getenv("LIGHT_NVIM")
 }
 
 function M.config()

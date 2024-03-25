@@ -1,17 +1,15 @@
 return {
   "nvim-neorg/neorg",
-  ft = "norg",
-  cmd = "Neorg",
-  build = ":Neorg sync-parsers",
+  version = "*",
+  lazy = false,
   keys = {
     { "<Leader>oj", "<cmd>Neorg journal today<CR>" },
     { "<Leader>oi", "<cmd>Neorg index<CR>" },
     { "<Leader>oo", "<cmd>Neorg<CR>" },
   },
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-telescope/telescope.nvim",
-    "nvim-treesitter/nvim-treesitter" },
+    "luarocks.nvim",
+  },
   config = function()
     local plugins = {
       ["core.defaults"] = {},
