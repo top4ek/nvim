@@ -31,7 +31,6 @@ function M.config()
       'jsonls',
       'marksman',
       'pylsp',
-      'ruby_ls',
       'rust_analyzer',
       'solargraph',
       'tsserver',
