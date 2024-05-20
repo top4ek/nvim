@@ -12,7 +12,7 @@ return {
         dotfiles = false
       },
       renderer = {
-        group_empty = true
+        group_empty = false
       },
       git = {
         ignore = false
