@@ -19,7 +19,8 @@ Set_keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 Set_keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-Set_keymap("i", "jj", "<ESC>")
+Set_keymap("i", "jk", "<ESC>")
+Set_keymap("i", "jkl", "<ESC><cmd>write<CR>")
 Set_keymap("", "<Leader>bb", "obinding.break<ESC>")
 Set_keymap("", "<Leader>bB", "Obinding.break<ESC>")
 

@@ -37,10 +37,18 @@ return {
           fallback()
         end,
       }),
+      matching = {
+        disallow_fuzzy_matching = true,
+        disallow_fullfuzzy_matching = true,
+        disallow_partial_fuzzy_matching = true,
+        disallow_partial_matching = true,
+        disallow_prefix_unmatching = false,
+      },
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "path" },
+        { name = "vim-dadbod-completion" },
         { name = 'buffer' },
+        { name = "path" },
         { name = 'luasnip' }
       }),
       sorting = defaults.sorting,
