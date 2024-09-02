@@ -36,7 +36,6 @@ return {
         map('n', '<leader>gD', function() gs.diffthis('~') end)
         map('n', '<leader>gd', gs.toggle_deleted)
       end,
-      _signs_staged_enable = true,
       current_line_blame = true,
       current_line_blame_opts = {
         virt_text = false
