@@ -48,7 +48,8 @@ function M.config()
       lspconfig.solargraph.setup({
         capabilities = lsp_capabilities,
         flags = { debounce_text_changes = 150 },
-        cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", 'stdio' },
+        -- cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", 'stdio' },
+        cmd = { "asdf", "exec", "solargraph", "stdio" },
         settings = {
           solargraph = {
             useBundler = true,
