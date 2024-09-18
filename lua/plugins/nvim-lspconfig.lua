@@ -25,7 +25,9 @@ function M.config()
       'ansiblels',
       'bashls',
       'clangd',
+      'cssls',
       'dockerls',
+      'eslint',
       'gopls',
       'html',
       'jsonls',
@@ -33,7 +35,10 @@ function M.config()
       'pylsp',
       'rust_analyzer',
       'solargraph',
-      'tsserver',
+      'sqlls',
+      'stimulus_ls',
+      'tailwindcss',
+      'ts_ls',
       'yamlls',
     }
   })
