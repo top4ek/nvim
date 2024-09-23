@@ -12,6 +12,7 @@ return {
     "stevearc/aerial.nvim"
   },
   keys = {
+    { "<Leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<CR>" },
     { "<Leader>fa", "<cmd>Telescope aerial<CR>" },
     { "<Leader>fb", "<cmd>Telescope buffers<CR>" },
     { "<Leader>fd", "<cmd>Telescope diagnostics<CR>" },
