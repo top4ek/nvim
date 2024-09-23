@@ -31,6 +31,7 @@ function M.config()
       'gopls',
       'html',
       'jsonls',
+      'lua_ls',
       'marksman',
       'pylsp',
       'rust_analyzer',
@@ -39,7 +40,7 @@ function M.config()
       'stimulus_ls',
       'tailwindcss',
       'ts_ls',
-      'yamlls',
+      'yamlls'
     }
   })
   mason_lspconfig.setup_handlers({

@@ -2,11 +2,13 @@ return {
   'hrsh7th/nvim-cmp',
   event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
+    "L3MON4D3/LuaSnip",
     "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-calc",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     "hrsh7th/cmp-nvim-lua",
     "hrsh7th/cmp-path",
-    "L3MON4D3/LuaSnip",
   },
   config = true,
   opts = function()
@@ -66,16 +68,19 @@ return {
             end
           end,
         },
+
       },
       sources = cmp.config.sources({
+        { name = "calc" },
         { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "nvim_lua" },
         { name = "treesitter" },
         { name = "vim-dadbod-completion" },
         { name = 'buffer' },
         { name = "path" },
         { name = 'luasnip' }
-      }),
-      sorting = defaults.sorting,
+      })
     }
   end
 }
