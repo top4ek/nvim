@@ -26,10 +26,11 @@ return {
     local telescope = require("telescope")
     telescope.setup {
       defaults = {
-        layout_strategy = 'vertical',
+        layout_strategy = 'horizontal',
         scroll_strategy = 'limit',
         layout_config = {
-          vertical = { height = 0.95, width = 0.95 }
+          vertical = { height = 0.95, width = 0.95 },
+          horizontal = { height = 0.95, width = 0.95 }
         }
       },
       extensions = {
