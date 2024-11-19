@@ -51,7 +51,7 @@ return {
           index = "index.norg",
           open_last_workspace = true,
           workspaces = {
-            Default = "~/Syncthing/configs/neorg"
+            Default = os.getenv("NORG_DEFAULT") or "~/Syncthing/configs/neorg"
           }
         }
       },
