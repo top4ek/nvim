@@ -5,7 +5,7 @@ return {
     { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
   },
   keys = {
-    { "<Leader>d", "<cmd>DBUIToggle<CR>" },
+    { "<Leader>db", "<cmd>DBUIToggle<CR>" },
   },
   cmd = {
     'DBUI',

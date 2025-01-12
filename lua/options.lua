@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.g.editorconfig = true
 
 function Set_keymap(mode, lhs, rhs, opts)
   local options = { noremap = true }
@@ -26,7 +27,7 @@ local options = {
   langmap = "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
   laststatus = 3,
   list = true,
-  listchars = "eol:↲,tab:» ,trail:·,extends:<,precedes:>,conceal:┊,nbsp:␣",
+  listchars = "tab:» ,trail:·,extends:<,precedes:>,conceal:┊,nbsp:␣",
   mouse = "a",
   nu = true,
   relativenumber = true,
@@ -43,8 +44,6 @@ local options = {
   undofile = true,
   wildmenu = true,
 }
-
-vim.g.editorconfig = true
 
 for k, v in pairs(options) do
   vim.opt[k] = v

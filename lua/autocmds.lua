@@ -30,6 +30,7 @@ command('LspAttach', {
 
 command('BufWritePre', {
   callback = function()
+    vim.lsp.buf.format({ bufnr = bufnr })
     vim.cmd([[:silent! %s/\s\+$//e]])
     vim.cmd([[:silent! %s/\%^\n\+//]])
     vim.cmd([[:silent! %s/\($\n\s*\)\+\%$//]])
@@ -40,12 +41,6 @@ command('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
   end,
-})
-
-command('BufWritePre', {
-  callback = function()
-    vim.lsp.buf.format({ bufnr = bufnr })
-  end
 })
 
 -- command("VimEnter", {

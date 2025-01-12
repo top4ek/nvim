@@ -1,4 +1,8 @@
 return {
   'echasnovski/mini.animate',
-  config = true
+  config = {
+    cursor = {
+      enable = false
+    }
+  }
 }

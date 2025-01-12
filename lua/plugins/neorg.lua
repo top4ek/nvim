@@ -1,6 +1,6 @@
 return {
   "nvim-neorg/neorg",
-  version = "*",
+  version = "v8.9.0",
   lazy = false,
   keys = {
     { "<Leader>oj", "<cmd>Neorg journal today<CR>" },
