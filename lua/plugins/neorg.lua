@@ -1,6 +1,6 @@
 return {
   "nvim-neorg/neorg",
-  version = "v8.9.0",
+  version = "*",
   lazy = false,
   keys = {
     { "<Leader>oj", "<cmd>Neorg journal today<CR>" },
@@ -21,7 +21,6 @@ return {
       },
       ["core.integrations.nvim-cmp"] = {},
       ["core.concealer"] = {},
-      -- ["core.export"] = {},
       ["core.keybinds"] = {
         config = {
           default_keybinds = true,
@@ -34,11 +33,6 @@ return {
           update_date = true
         }
       },
-      -- ["core.presenter"] = {
-      --   config = {
-      --     zen_mode = "zen-mode"
-      --   }
-      -- },
       ["core.journal"] = {
         config = {
           strategy = "nested",

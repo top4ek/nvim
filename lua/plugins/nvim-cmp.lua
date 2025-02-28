@@ -72,13 +72,14 @@ return {
       },
       sources = cmp.config.sources({
         { name = "calc" },
+        { name = "neorg" },
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "nvim_lua" },
+        { name = "path" },
         { name = "treesitter" },
         { name = "vim-dadbod-completion" },
         { name = 'buffer' },
-        { name = "path" },
         { name = 'luasnip' }
       })
     }
