@@ -50,26 +50,35 @@ function M.config()
         flags = { debounce_text_changes = 150 }
       }
     end,
-    ["solargraph"] = function()
-      lspconfig.solargraph.setup({
+    -- ["solargraph"] = function()
+    --   lspconfig.solargraph.setup({
+    --     capabilities = lsp_capabilities,
+    --     flags = { debounce_text_changes = 150 },
+    --     -- cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", 'stdio' },
+    --     cmd = { "asdf", "exec", "solargraph", "stdio" },
+    --     settings = {
+    --       solargraph = {
+    --         useBundler = true,
+    --         diagnostic = true,
+    --         completion = true,
+    --         hover = true,
+    --         formatting = true,
+    --         symbols = true,
+    --         definitions = true,
+    --         rename = true,
+    --         references = true,
+    --         folding = true
+    --       }
+    --     }
+    --   })
+    -- end,
+    ["ruby_lsp"] = function()
+      lspconfig.html.setup({
+        cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
         capabilities = lsp_capabilities,
-        flags = { debounce_text_changes = 150 },
-        -- cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", 'stdio' },
-        cmd = { "asdf", "exec", "solargraph", "stdio" },
-        settings = {
-          solargraph = {
-            useBundler = true,
-            diagnostic = true,
-            completion = true,
-            hover = true,
-            formatting = true,
-            symbols = true,
-            definitions = true,
-            rename = true,
-            references = true,
-            folding = true
-          }
-        }
+        -- cmd = { "asdf", "exec", "ruby-lsp" },
+        cmd = { "ruby-lsp" },
+        filetypes = { "ruby", "eruby" }
       })
     end,
     ["html"] = function()
