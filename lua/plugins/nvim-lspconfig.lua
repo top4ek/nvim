@@ -73,11 +73,11 @@ function M.config()
     --   })
     -- end,
     ["ruby_lsp"] = function()
-      lspconfig.html.setup({
-        cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
+      lspconfig.ruby_lsp.setup({
+        -- cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv('GLOBAL_GEMFILE') },
         capabilities = lsp_capabilities,
-        -- cmd = { "asdf", "exec", "ruby-lsp" },
-        cmd = { "ruby-lsp" },
+        flags = { debounce_text_changes = 150 },
+        cmd = { "asdf", "exec", "ruby-lsp" },
         filetypes = { "ruby", "eruby" }
       })
     end,
