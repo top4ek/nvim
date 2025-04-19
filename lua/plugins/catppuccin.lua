@@ -42,14 +42,38 @@ return {
     default_integrations = true,
     integrations = {
       cmp = true,
+      dadbod_ui = true,
       gitsigns = true,
-      nvimtree = true,
-      treesitter = true,
-      notify = false,
+      leap = true,
+      mason = true,
       mini = {
         enabled = true,
-        indentscope_color = "",
-      }
+        indentscope_color = "green",
+      },
+      native_lsp = {
+        enabled = true,
+        virtual_text = {
+          errors = { "italic" },
+          hints = { "italic" },
+          warnings = { "italic" },
+          information = { "italic" },
+          ok = { "italic" },
+        },
+        underlines = {
+          errors = { "underline" },
+          hints = { "underline" },
+          warnings = { "underline" },
+          information = { "underline" },
+          ok = { "underline" },
+        },
+        inlay_hints = {
+          background = true,
+        },
+      },
+      neogit = true,
+      notify = false,
+      nvimtree = true,
+      treesitter = true
     }
   }
 }
