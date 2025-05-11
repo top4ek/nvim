@@ -13,13 +13,12 @@ return {
   config = function()
     local plugins = {
       ["core.defaults"] = {},
-      ["core.completion"] = {
-        config = {
-          engine = "nvim-cmp",
-          name = "[Norg]"
-        }
-      },
-      ["core.integrations.nvim-cmp"] = {},
+      -- ["core.completion"] = {
+      --   config = {
+      --     engine = "nvim-cmp",
+      --     name = "[Norg]"
+      --   }
+      -- },
       ["core.concealer"] = {},
       ["core.keybinds"] = {
         config = {
