@@ -21,8 +21,8 @@ Set_keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 
 Set_keymap("i", "jk", "<ESC>")
 Set_keymap("i", "jkl", "<ESC><cmd>write<CR>")
-Set_keymap("", "<Leader>bb", "obinding.break<ESC>")
-Set_keymap("", "<Leader>bB", "Obinding.break<ESC>")
+Set_keymap("", "<Leader>bb", "obinding.pry<ESC>")
+Set_keymap("", "<Leader>bB", "Obinding.pry<ESC>")
 
 Set_keymap("n", "<Leader>fs", "<cmd>Neogit<CR>")
 Set_keymap("n", "<Leader>fc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
