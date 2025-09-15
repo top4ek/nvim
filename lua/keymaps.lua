@@ -31,5 +31,5 @@ Set_keymap('n', '<Leader>e', '<CMD>lua require("nvim-tree.api").tree.toggle { fi
 
 Set_keymap("v", "<leader>s", "<cmd>sort i<cr>")
 
-Set_keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
-Set_keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+Set_keymap("n", "<Tab>", "<cmd>bnext<CR>")
+Set_keymap("n", "<S-Tab>", "<cmd>bprev<CR>")
