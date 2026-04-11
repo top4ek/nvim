@@ -1,55 +1,58 @@
-return {
-  "nvim-neorg/neorg",
-  version = "*",
-  lazy = false,
-  keys = {
-    { "<Leader>oj", "<cmd>Neorg journal today<CR>" },
-    { "<Leader>oi", "<cmd>Neorg index<CR>" },
-    { "<Leader>oo", "<cmd>Neorg<CR>" },
-  },
-  dependencies = {
-    "luarocks.nvim",
-  },
-  config = function()
-    local plugins = {
-      ["core.defaults"] = {},
-      -- ["core.completion"] = {
-      --   config = {
-      --     engine = "nvim-cmp",
-      --     name = "[Norg]"
-      --   }
-      -- },
-      ["core.concealer"] = {},
-      ["core.keybinds"] = {
-        config = {
-          default_keybinds = true,
-          neorg_leader = "<Leader><Leader>",
-        },
+vim.pack.add({
+  "https://github.com/vhyrro/luarocks.nvim",
+  "https://github.com/nvim-neorg/neorg"
+})
+
+vim.keymap.set("n", "<Leader>oj", "<cmd>Neorg journal today<CR>")
+vim.keymap.set("n", "<Leader>oi", "<cmd>Neorg index<CR>")
+vim.keymap.set("n", "<Leader>oo", "<cmd>Neorg<CR>")
+
+require("luarocks-nvim").setup()
+require("neorg").setup({
+  load = {
+    ["core.defaults"] = {},
+    ["core.integrations.treesitter"] = {
+      config = {
+        configure_parsers = false,
+        install_parsers = false,
       },
-      ["core.esupports.metagen"] = {
-        config = {
-          type = "auto",
-          update_date = true
+    },
+    -- ["core.completion"] = {
+    --   config = {
+    --     engine = "nvim-cmp",
+    --     name = "[Norg]"
+    --   }
+    -- },
+    ["core.concealer"] = {},
+    ["core.keybinds"] = {
+      config = {
+        default_keybinds = true,
+        neorg_leader = "<Leader><Leader>",
+      },
+    },
+    ["core.esupports.metagen"] = {
+      config = {
+        type = "auto",
+        update_date = true
+      }
+    },
+    ["core.journal"] = {
+      config = {
+        strategy = "nested",
+        workspace = "Default",
+      },
+    },
+    -- ["core.summary"] = {},
+    ["core.dirman"] = {
+      config = {
+        index = "index.norg",
+        open_last_workspace = true,
+        workspaces = {
+          Default = os.getenv("NORG_DEFAULT") or "~/Syncthing/configs/neorg"
         }
-      },
-      ["core.journal"] = {
-        config = {
-          strategy = "nested",
-          workspace = "Default",
-        },
-      },
-      -- ["core.summary"] = {},
-      ["core.dirman"] = {
-        config = {
-          index = "index.norg",
-          open_last_workspace = true,
-          workspaces = {
-            Default = os.getenv("NORG_DEFAULT") or "~/Syncthing/configs/neorg"
-          }
-        }
-      },
-    }
-    vim.opt.conceallevel = 2
-    require("neorg").setup { load = plugins }
-  end
-}
+      }
+    },
+  }
+})
+
+vim.opt.conceallevel = 2

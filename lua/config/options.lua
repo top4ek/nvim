@@ -2,14 +2,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.editorconfig = true
 
-function Set_keymap(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 local options = {
   autoindent = true,
   backspace = { "indent", "eol", "start" },
