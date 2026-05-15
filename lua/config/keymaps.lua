@@ -27,7 +27,6 @@ vim.keymap.set("", "<Leader>bB", "Obinding.pry<ESC>")
 vim.keymap.set("n", "<Leader>fs", "<cmd>Neogit<CR>")
 vim.keymap.set("n", "<Leader>fc", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 
-
 vim.keymap.set("v", "<leader>s", "<cmd>sort i<cr>")
 
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")

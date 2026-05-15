@@ -36,8 +36,6 @@ require("tree-sitter-manager").setup({
     "mermaid",
     "nginx",
     "nix",
-    "norg",
-    "norg_meta",
     "python",
     "query",
     "regex",
@@ -53,22 +51,6 @@ require("tree-sitter-manager").setup({
     "vimdoc",
     "xml",
     "yaml",
-  },
-  languages = {
-    norg = {
-      install_info = {
-        url = "https://github.com/nvim-neorg/tree-sitter-norg",
-        revision = "6348056b999f06c2c7f43bb0a5aa7cfde5302712",
-        use_repo_queries = true,
-      },
-    },
-    norg_meta = {
-      install_info = {
-        url = "https://github.com/nvim-neorg/tree-sitter-norg-meta",
-        revision = "a479d1ca05848d0b51dd25bc9f71a17e0108b240",
-        use_repo_queries = true,
-      },
-    },
   },
 })
 

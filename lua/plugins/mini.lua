@@ -1,9 +1,10 @@
 vim.pack.add({
-  "https://github.com/echasnovski/mini.animate",
-  "https://github.com/echasnovski/mini.bufremove",
-  "https://github.com/echasnovski/mini.cursorword",
-  "https://github.com/echasnovski/mini.indentscope",
-  "https://github.com/echasnovski/mini.pairs",
+  { src = 'https://github.com/nvim-mini/mini.animate',     version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.bufremove',   version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.cmdline',     version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.cursorword',  version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.indentscope', version = 'stable' },
+  { src = 'https://github.com/nvim-mini/mini.pairs',       version = 'stable' },
 })
 
 require('mini.animate').setup({
