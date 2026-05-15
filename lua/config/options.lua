@@ -43,5 +43,5 @@ end
 
 vim.cmd([[
     set termguicolors
-    lan ru_RU.UTF-8
+    lan en_US.UTF-8
 ]])
