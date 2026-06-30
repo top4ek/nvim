@@ -15,6 +15,8 @@ require('mini.animate').setup({
 
 require('mini.bufremove').setup()
 
+require('mini.cmdline').setup()
+
 require('mini.cursorword').setup({
   delay = 500
 })
