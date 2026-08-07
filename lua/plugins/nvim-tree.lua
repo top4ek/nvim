@@ -23,7 +23,7 @@ require("nvim-tree").setup({
     group_empty = false
   },
   git = {
-    timeout = 1000,
+    timeout = 2000,
     ignore = false
   },
   auto_reload_on_write = true,

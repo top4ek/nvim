@@ -17,7 +17,7 @@ vim.keymap.set("n", "<Leader>Q", "<cmd>%bd<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("i", "jkl", "<ESC><cmd>write<CR>")
