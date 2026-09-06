@@ -4,8 +4,8 @@ end
 
 -- Strip spaces on write
 vim.api.nvim_create_autocmd("BufWritePre", {
-  callback = function()
-    vim.lsp.buf.format({ bufnr = bufnr })
+  callback = function(args)
+    vim.lsp.buf.format({ bufnr = args.buf })
     vim.cmd([[:silent! %s/\s\+$//e]])
     vim.cmd([[:silent! %s/\%^\n\+//]])
     vim.cmd([[:silent! %s/\($\n\s*\)\+\%$//]])
@@ -27,4 +27,18 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   callback = function()
     vim.opt_local.filetype = "sh"
   end,
+})
+
+vim.filetype.add({
+  extension = {
+    jinja = "jinja",
+    jinja2 = "jinja",
+    j2 = "jinja",
+  },
+  pattern = {
+    [".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/tasks/.*%.ya?ml"] = "yaml.ansible",
+    [".*/roles/.*/handlers/.*%.ya?ml"] = "yaml.ansible",
+    ["playbook%.ya?ml"] = "yaml.ansible",
+  },
 })

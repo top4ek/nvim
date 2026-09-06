@@ -5,63 +5,51 @@ vim.pack.add({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({
-  ensure_installed = {
-    'angularls',
-    'ansiblels',
-    'bashls',
-    'clangd',
-    'cssls',
-    'dockerls',
-    'eslint',
-    'gopls',
-    'herb_ls',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'marksman',
-    'pylsp',
-    'ruby_lsp',
-    'rust_analyzer',
-    'sqlls',
-    'stimulus_ls',
-    'tailwindcss',
-    'ts_ls',
-    'yamlls'
-  },
-  automatic_enable = {
-    'angularls',
-    'ansiblels',
-    'bashls',
-    'clangd',
-    'cssls',
-    'dockerls',
-    'eslint',
-    'gopls',
-    'herb_ls',
-    'html',
-    'jsonls',
-    'lua_ls',
-    'marksman',
-    'pylsp',
-    'ruby_lsp',
-    'rust_analyzer',
-    'sqlls',
-    'stimulus_ls',
-    'tailwindcss',
-    'ts_ls',
-    'yamlls'
-  }
-})
+require("mason-lspconfig").setup()
+
+local registry = require("mason-registry")
+
+local ensure_installed = {
+  'angular-language-server',
+  'ansible-language-server',
+  'ansible-lint',
+  'bash-language-server',
+  'clangd',
+  'css-lsp',
+  'dockerfile-language-server',
+  'eslint-lsp',
+  'gopls',
+  'herb-language-server',
+  'html-lsp',
+  'jinja-lsp',
+  'json-lsp',
+  'lua-language-server',
+  'marksman',
+  'python-lsp-server',
+  'ruby-lsp',
+  'rust-analyzer',
+  'sqlls',
+  'stimulus-language-server',
+  'tailwindcss-language-server',
+  'typescript-language-server',
+  'yaml-language-server',
+}
+
+registry.refresh(vim.schedule_wrap(function()
+  for _, name in ipairs(ensure_installed) do
+    local ok, pkg = pcall(registry.get_package, name)
+    if not ok then
+      vim.notify(("mason: unknown package %q"):format(name), vim.log.levels.WARN)
+    elseif not pkg:is_installed() and not pkg:is_installing() then
+      pkg:install()
+    end
+  end
+end))
 
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = 'LSP actions',
-  callback = function()
-    local bufmap = function(mode, lhs, rhs)
-      vim.keymap.set(mode, lhs, rhs, { buffer = true })
-    end
-
-    local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  callback = function(args)
+    local bufopts = { noremap = true, silent = true, buffer = args.buf }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
